@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>AcCloverUI</title>
+<link rel="stylesheet" type="text/css" href="clover.css">
+	<script src="js/jquery.min.js"></script>
+<script src="clover.js"></script>
+  </head>
+  <body>	
+	<h1 id="title">AcCloverUI Examples</h1>
+各种颜色的字
+<p class="red bggreen">红 class="red bggreen"</p>
+<p class="green">绿 class="green"</p>
+<p class="yellow bgblue">黄 class="yellow bgblue"</p>
+<p class="yellowgreen">黄绿 class="yellowgreen"</p>
+<p class="blue bgyellow">蓝 class="blue bgyellow"</p>
+<p class="skyblue bgred">天蓝 class="skyblue bgred"</p>
+<p class="gold bgskyblue">金 class="gold bgskyblue"</p>
+<p class="white bgblack" >白 class="white bgblack"</p>
+<p class="black">黑 class="black"</p>
+
+<div class="card bgyellow">我是一个卡片 class="card bgyellow"</div>
+<button onclick="acc.randomtc('#rt');">点我变色</button>
+<div id="rt">随机颜色</div><br/>
+<p>element要变色的元素。说明：需要跟一个元素绑定，改变文字颜色。</p><code>acc.randomtc(element);</code>
+<br/><br/>
+<button onclick="acc.dlg('white','AcCloverUI','black','dodgerblue','Hello World','black',false);">点我弹窗（点击阴影部分关闭）</button>
+<button onclick="acc.dlg('white','AcCloverUI','black','dodgerblue','Hello World','black',true);">点我弹窗（点击关闭按钮关闭）</button>
+<p>弹窗<br/>bgColor弹窗背景颜色、title标题、titleColor标题颜色、lineColor标题内容分隔线颜色、content内容、contentColor内容颜色、cbv是否显示关闭按钮（如果不设置为true的话，可以点击弹窗外的遮罩关闭）。</p><code>acc.dlg(bgColor,title,titleColor,lineColor,content,contentColor,cbv);</code><br/><br/>
+<div id="aB"></div>
+<button onclick="acc.allBefore('#aB','<a href=javascript:;>链接</a> ');">点我在上面那个div这个布局元素里面的，所有元素的前面加入一个链接</button><br/><br/><br/>
+<p>指定布局元素下的所有元素前插入内容<br/>element要插入到的布局元素、addContent要添加的内容（可包含HTML元素）。</p>
+<code>acc.allBefore(element,addContent);</code>
+<p>Base64</p>
+<textarea id="ti"></textarea><br/>
+<button onclick="eo.value=safe.b64e(ti.value);">编码</button><br/>
+<textarea id="eo"></textarea>
+<li class="square">class="square"</li>
+<li class="circle"> class="circle"</li>
+<li class="disc"> class="disc"</li>
+<button onclick="acc.drag('#tz',function(){alert('你点击了我');});">点我使上面写着“拖拽我”的元素可拖拽</button>
+<div id="tz" class="yellowgreen" style="font-size:20px;position:fixed;bottom:60px;"><img src="smile.gif"/>拖拽我</div>
+<p>使得元素可拖拽<br/>element要拖拽的元素、clickAction点击执行的代码（可选，例如：function(){alert('你点击了我');}）。<br/>注意：要拖拽的元素必须设置为固定！由于设置成可拖拽，点击事件可能只在元素外监听！</p>
+<code>acc.drag(element,clickAction);</code><br/>
+<progress value="0" max="100" min="0" id="demop"></progress>最大进度：100
+<p>输入一个数值，点击下面的确认按钮，上面的进度条进度将会增加您输入的数值（输入小数将会保留整数〔不会四舍五入〕，输入负数可减少）！</p>
+<input type="number" id="pi"/>
+<button onclick="acc.addProgress('#demop',pi.value);">确认</button>
+<p>进度条增加指定进度<br/>element要增加进度的进度条元素、addValue要增加的数值（输入小数将会保留整数〔不会四舍五入〕，输入负数可减少）。</p>
+<code>acc.addProgress(element,addValue);</code>
+</body>
+</html>
